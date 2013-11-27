@@ -9,18 +9,24 @@ import odml.core.Section;
  * 
  */
 public class Tutorial {
+    
    public Tutorial() {
-      Section tree = sections1();
-      askForInput();
-      sections2();
-      askForInput();
-      properties1(tree);
-      askForInput();
-      propertiesWithBinaryContent();
-      askForInput();
-      linksAndIncludes();
-      askForInput();
-      mappings();
+      
+   }
+   
+   
+   public void run() {
+       Section tree = sections1();
+       askForInput();
+       sections2();
+       askForInput();
+       properties1(tree);
+       askForInput();
+       propertiesWithBinaryContent();
+       askForInput();
+       linksAndIncludes();
+       askForInput();
+       mappings();
    }
 
   
@@ -146,7 +152,5 @@ public class Tutorial {
 
       }
    }
-   public static void main(String[] args) {
-      new Tutorial();
-   }
+
 }
