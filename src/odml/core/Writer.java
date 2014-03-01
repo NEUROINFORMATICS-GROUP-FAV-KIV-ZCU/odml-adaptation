@@ -94,7 +94,10 @@ public class Writer implements Serializable {
      * 
      * @param filename {@link String} the full name of the destination file (including path).
      * @param rootSection {@link Section} the root Section of the metadata tree.
+     * 
+     * @deprecated Use combination of {@link #Writer(Section)} and {@link #write(OutputStream)} instead.
      */
+    @Deprecated
     public Writer(String filename, Section rootSection) {
         this(new File(filename), rootSection);
     }
@@ -105,7 +108,10 @@ public class Writer implements Serializable {
      * 
      * @param file {@link File} the File into which the metadata should be written.
      * @param rootSection {@link Section}: the rootSection of the odml metadata tree.
+     * 
+     * @deprecated Use combination of {@link #Writer(Section)} and {@link #write(OutputStream)} instead.
      */
+    @Deprecated
     public Writer(File file, Section rootSection) {
         this(file, rootSection, false);
     }
@@ -120,7 +126,10 @@ public class Writer implements Serializable {
      * @param rootSection {@link Section}: the rootSection of the odml metadata tree.
      * @param asTerminology {@link Boolean}: if true also emtpy properties (no value) are written, otherwise
      *        only non-emty properties are written to disc.
+     * 
+     * @deprecated Use combination of {@link #Writer(Section, boolean)} and {@link #write(OutputStream)} instead.
      */
+    @Deprecated
     public Writer(File file, Section rootSection, boolean asTerminology) {
         this.file = file;
         this.odmlTree = rootSection;
@@ -133,6 +142,8 @@ public class Writer implements Serializable {
      * 
      * @param stream {@link OutputStream}: output stream to which to write the document
      * @return {@link Boolean} true if operation was successful, false otherwise.
+     * 
+     * @author Jakub Krauz
      */
     public boolean write(OutputStream stream) {
         if (odmlTree == null) {
@@ -157,6 +168,8 @@ public class Writer implements Serializable {
      * @param optimize {@link Boolean}: remove empty properties and sections, removes redundancy in linked sections.
      * @param validate {@link Boolean}: validates the metadata against the terminologies.
      * @return {@link Boolean}: true if writing succeeded, false otherwise.
+     * 
+     * @author Jakub Krauz
      */
     public boolean write(OutputStream stream, boolean optimize, boolean validate) {
         if (optimize)
@@ -174,7 +187,10 @@ public class Writer implements Serializable {
      * @param optimize {@link Boolean}: remove empty properties and sections, removes redundancy in linked sections.
      * @param validate {@link Boolean}: validates the metadata against the terminologies.
      * @return {@link Boolean}: true if writing succeeded, false otherwise.
+     * 
+     * @deprecated Use {@link #write(OutputStream, boolean, boolean)} instead.
      */
+    @Deprecated
     public boolean write(boolean optimize, boolean validate) {
         if (optimize) {
             odmlTree.optimizeTree();
@@ -190,7 +206,10 @@ public class Writer implements Serializable {
      * Writes the metadata to disc.
      * 
      * @return {@link Boolean} true if operation was successful, false otherwise.
+     * 
+     * @deprecated Use {@link #write(OutputStream)} instead.
      */
+    @Deprecated
     public boolean write() {
       if (file == null)
           return false;

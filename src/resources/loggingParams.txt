@@ -1,17 +1,9 @@
 # root logger to ERROR, i.e. if level not further specified, only ERROR output printing
-<<<<<<< .mine
-log4j.rootLogger=INFO, stdout, W, R
-log4j.logger.odml.core.Reader=WARN
-log4j.logger.odml.core.Writer=WARN
-log4j.logger.odml.core.Section=WARN
-log4j.logger.odml.core.Property=WARN
-=======
 log4j.rootLogger=ERROR, stdout, W, R
 log4j.logger.odml.core.Reader=ERROR
 log4j.logger.odml.core.Writer=ERROR
 log4j.logger.odml.core.Section=ERROR
 log4j.logger.odml.core.Property=ERROR
->>>>>>> .r163
 
 
 # one appender (stdout) for console printing
