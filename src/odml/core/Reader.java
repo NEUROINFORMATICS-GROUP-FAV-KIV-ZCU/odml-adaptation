@@ -49,7 +49,7 @@ public class Reader implements Serializable {
          NO_VALIDATION = 4, VALIDATE = 5;
 
 
-   public Reader() throws Exception {
+   public Reader() {
       this(null);
    }
 
@@ -60,7 +60,7 @@ public class Reader implements Serializable {
     * @param schemaLocations
     *            {@link URL}[]: the location of the validation schema.
     */
-   public Reader(URL[] schemaLocations) throws Exception {
+   public Reader(URL[] schemaLocations) {
       this.schemaLocations = schemaLocations;
    }
    
